@@ -17,11 +17,23 @@ keypoints:
 ---
 
 # Structuring a Project
-Vlad and Wolfsman need some calculation to start sending rockets to the planets. They decided to start a Python project.
+Vlad and Wolfsman are still investigating how to send a planetary lander to Mars and other planets or moons. 
+They need to start crunching numbers and they decided to start a Python project.
+
+![planetsmath](../fig/planetsmath.png)
+[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
+[CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
+[Pluto](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
+Courtesy NASA/JPL-Caltech.
+[Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
+&copy; Luc Viatour / [https://lucnix.be](https://lucnix.be/) /
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
+[Spacecraft](https://www.kissclipart.com/rocket-ship-no-background-clipart-spacecraft-rocke-gwjlam/)
+[CC 0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 Most Python projects are structured in a similar way. There are very good reasons for this - if you follow the 'standard', other people who approach your code will recognise parts of it and will know by default how to install your code, run any tests that might exist, and where to look for source code or to change things like the dependencies that are required.
  
-Generally, at a minimum, a Python project has the following structure:
+The following is a simple Python project with a typical structure (the `.git` directory is omitted):
 
 ~~~
 planetsmath/
@@ -29,7 +41,8 @@ planetsmath/
 ├── .editorconfig
 ├── .github
 │   └── workflows
-│       └── linters.yaml
+│       ├── linters.yaml
+│       └── pytest.yaml
 ├── .gitignore
 ├── LICENSES
 │   └── Apache-2.0.txt
@@ -56,13 +69,13 @@ $ git clone git@github.com:mambelli/planetsmath.git
 ~~~
 {: .bash}
 
-We'll take these folders/files one at a time:
+We'll talk of these folders/files one at a time:
 
 ## src/
 The source tree where all the Python files reside.
 
 ## planetsmath/
-Inside the project source tree we normally have a folder which matches the name of the Python module. This is done so that from the src directory , the code within the module can be imported with:
+Inside the project source tree we normally have a folder which matches the name of the Python module. This is done so that from the src directory, the code within the module can be imported with:
 ~~~
 import planetsmath
 ~~~
@@ -127,14 +140,28 @@ To install all of the dependencies, you can run `pip install -r requirements.txt
 * Was introduced mainly for distributing compiled dependencies. This is now well handled by pip with the introduction of `wheels`
 * Anaconda is not usable or is heavily discouraged on many HPC clusters.
 
+## README.md
 
-# Pre-commit checks
+This file offers general information about the project. It is the one displayed by GitHub at the end of the code page.
+It is possible to add badges with the status of the CI tests.
 
-It is possible to run some checks before each commit command taking advantage of the hooks mechanism in Git.
+## Other files
+
+- `.editorconfig`: joint comfiguration recognized by many different editors
+- `.github` directory: contains GitHub automation files, see the GitHub CI section below.
+- `DEVELOPMENT.md`: instructions for collaborators and your future self.
+- `LICENSE.txt (and .reuse and LICENSES): it's the common place for your project's license, very important when making your code public.
+   See the 'Licensing compliance' section below for a complete licensing solution : reuse can establish and verify licensing complaiance.
+- `.pylintrc`: configuration of pylint, a python linter
+
+
+# Adding Pre-commit checks
+
+It is possible to run some checks before each commit command, taking advantage of the hooks mechanism in Git.
 A pre-commit will guarantee that committed code always follows the desired standard.
 To start using pre-commit you have to add a pre-commit config file and to install pre-commit.
 
-Add a pre-commit config file named .pre-commit-config.yaml with the following content:
+Add a pre-commit config file named `.pre-commit-config.yaml` with the following content for an initial set of checks:
 ~~~
 # For more information see
 #  https://pre-commit.com/index.html#install
@@ -195,9 +222,16 @@ repos:
 ~~~
 {: .yaml}
 
-To install it run `pre-commit install` from the repository root.
-You may want to setup automatic notifications for pre-commit enabled
-repos: https://pre-commit.com/index.html#automatically-enabling-pre-commit-on-repositories
+To install it run from the repository root:
+~~~
+pre-commit install
+~~~
+{: .bash}
+
+
+You may want to setup automatic notifications for pre-commit enabled repos. 
+This will suggest updates to your `.pre-commit-config.yaml`:
+https://pre-commit.com/index.html#automatically-enabling-pre-commit-on-repositories
 
 You can also run pre-commit manually to check all the files:
 ~~~
@@ -230,9 +264,10 @@ REUSE is installed as development dependency or you can install it manually
   contact project management if this is needed.
 
 
-# GitHub testing
+# GitHub CI: unit tests and linting
 
-First, we'll introduce a new file. In the 'planetsmath' subdirectory, in a file called 'test_functions.py' we can write any tests of methods in 'functions.py'. Generally, the library 'pytest' is commonly used for this. Pytest can pick up tests written in the following way:
+First, we'll introduce a new file. In the `src/planetsmath` subdirectory, in a file called `test_functions.py` we can write any tests of methods in `functions.py`. 
+The library `pytest` is commonly used for unit tests like this. Pytest can pick up tests written in the following way:
 
 ~~~
 from .functions import sum_function
@@ -244,11 +279,12 @@ def test_sum_function():
 ~~~
 {: .python}
 
-Note that both the file name and the method inside are preceded with `test_` - this is compulsory!
+Note that both the file name and the method inside have the same name of the module and function they wasnt to test, but are preceded with `test_` - this is compulsory!
 
-With this, when pytest is installed, you can run 'py.test -v' at the command line, and all of your tests will run. With this, you can check your code for correctness.
+With this, when pytest is installed, you can run 'py.test -v' at the command line, and all of your tests will run. 
+With unit tests like this, you can check your code for correctness.
 
-Create a file called .github/workflows/pytest.yaml with the following contents:
+Next, create a file called `.github/workflows/pytest.yaml` with the following content:
 ~~~
 # SPDX-FileCopyrightText: 2022 Fermi Research Alliance, LLC
 # SPDX-License-Identifier: Apache-2.0
@@ -289,3 +325,4 @@ jobs:
 
 This is a basic recipe that will allow your tests to run on GitHub. Add both of these files to your staging area and commit them, and then push to GitHub.
 
+The `planetsmath` example includes a second CI configuration file, to run common Python linters.
