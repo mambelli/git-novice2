@@ -307,6 +307,82 @@ GitHub.  While we encourage open science, sometimes private repos are the
 only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
 
+## [Supplemental: Using Git from RStudio]({{ page.root }}{% link _episodes/14-supplemental-rstudio.md %})
+
+## [Setting up a Python Project]({{ page.root }}{% link _episodes/15-python-project-and-testing.md %})
+
+Python is a very common language.
+This episode gives an example and it is functional to see some additional
+capabilities of Git and GitHub like the ability to run pre-commit scripts,
+an example of Git hooks, and GitHub actions and workflows.
+It is functional alsso to the next episode, since the workflows will be
+used to test Pull Requests before proceeding with merges.
+
+## [Collaborating - Branching and Pull Requests]({{ page.root }}{% link _episodes/16-collab-branch-and-pr.md %})
+
+This is the most common way of collaborating on GitHub and for big projects on Git.
+It gives more control to the project owners and allos to review and discuss changes.
+
+This episode could be rewritten using the original planets project and moved up.
+This would make it more similar to the earlier episodes but would loose the
+ability to see the code testing workflows used to validate the Python code 
+in action. 
+
+Before starting prepare your own origin repository, a copy of the
+https://github.com/mambelli/planetsmath repository done either via fork
+or by cloning and saving as a new repository.
+This will be the repository that others in the class will fork from, 
+the URL you'll have to communicate to the class (instead of vlad's one).
+
+The other teaching observations are similar to the Collaborating episode. 
+Instead of a "shared repository" think of a "shared fork".
+
+*   Decide in advance whether all the learners will work forking the same
+    repository, or whether they will work in pairs (or other small groups)
+    forking separate repositories.  The former is easier to set up; the
+    latter runs more smoothly.
+
+*   Role playing between two instructors can be effective when teaching the
+    collaboration and conflict sections of the lesson.  One instructor can play
+    the role of the original repository owner, while the second instructor can 
+    play the role of the collaborator owning the fork.  If it is possible, try 
+    to use two projectors so that the computer screens of both instructors can
+    be seen.  This makes for a very clear illustration to the students as to who 
+    does what.
+
+*   It is also effective to pair up students during this lesson and assign one
+    member of the pair to take the role of the original owner and the other 
+    the role of the collaborator.  In this setup, challenges can include asking
+    the collaborator to make a change, commit it, and push the change to the remote
+    repository so that the owner can then retrieve it, and vice-versa.  The
+    role playing between the instructors can get a bit "dramatic" in the
+    conflicts part of the lesson if the instructors want to inject some humor
+    into the room.
+
+*   If you don't have two projectors, have two instructors at the front of the
+    room.  Each instructor does their piece of the collaboration demonstration
+    on their own computer and then passes the projector cord back and forth
+    with the other instructor when it's time for them to do the other part of
+    the collaborative workflow.  It takes less than 10 seconds for each
+    switchover, so it doesn't interrupt the flow of the lesson.
+    And of course it helps to give each of the instructors a different-colored
+    hat, or put different-colored sticky notes on their foreheads.
+
+*   If you're the only instructor, the best way to create is to create a second 
+    GitHub account, e.g. an organization, and to fork the repository there.  Then
+    clone the two repos in your Desktop, but under different names, e.g., pretend
+    one is your collaboration, the other your private copy:
+
+    ~~~
+    $ git clone https://github.com/vlad/planetsmath.git planetsmath-collaboration
+    ~~~
+    {: .language-bash}
+
+*   An interesting role play is sending on purpose a PR with something wrong and
+    use the conversation thread and the code review to request fixes and to 
+    show also how the PR recipient can edit the files in GitHub.
+
+
 [cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
 [code-school]: https://www.codeschool.com/
 [diffmerge]: https://sourcegear.com/diffmerge/

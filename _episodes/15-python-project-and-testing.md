@@ -147,12 +147,17 @@ It is possible to add badges with the status of the CI tests.
 
 ## Other files
 
-- `.editorconfig`: joint comfiguration recognized by many different editors
-- `.github` directory: contains GitHub automation files, see the GitHub CI section below.
 - `DEVELOPMENT.md`: instructions for collaborators and your future self.
-- `LICENSE.txt (and .reuse and LICENSES): it's the common place for your project's license, very important when making your code public.
-   See the 'Licensing compliance' section below for a complete licensing solution : reuse can establish and verify licensing complaiance.
-- `.pylintrc`: configuration of pylint, a python linter
+- `LICENSE.txt` (and `.reuse` and `LICENSES`): it's the common place for your project's license, seen also in the [licensing episode](11-licensing.md), very important when making your code public.
+  See the [Licensing compliance section](# Licensing compliance) below for a complete licensing solution : reuse can establish and verify licensing complaiance.
+- `src/planetsmath/test_functions.py`: unit tests for `functions.py`, see the (testing section)[# GitHub CI: unit tests and linting] below.
+
+Hidden files, visible with `ls -a`:
+- `.editorconfig`: joint comfiguration recognized by many different editors
+- `.git` and `.gitignore`: Git internal files, seen in the [Creating a repository](03-create.md) and [Ignoring Things](06-ignore.md) episodes respectively
+- `.github` directory: contains GitHub automation files, see the [testing and GitHub CI section](# GitHub CI: unit tests and linting) below.
+- `.pre-commit-config.yaml`: pre-commit configuration file, see the [next section](# Adding Pre-commit checks).
+- `.pylintrc`: configuration file of pylint, a python linter
 
 
 # Adding Pre-commit checks
