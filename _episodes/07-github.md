@@ -83,8 +83,13 @@ Click on the 'SSH' link to change the [protocol]({{ page.root }}{% link referenc
 > ## HTTPS vs. SSH
 >
 > We use SSH here because, while it requires some additional configuration, it is a 
-> security protocol widely used by many applications.  The steps below describe SSH at a 
-> minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup 
+> security protocol widely used by many applications.  An alternative is the 
+> [GitHub CLI (comman line interpreter)](https://cli.github.com/), `gh`.
+> Consoder using it to create
+> [access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
+> if it is available or you can install proframs on the machine where you are using 
+> the terminal.  The steps below describe SSH at a minimum level for GitHub.  A supplemental 
+> episode to this lesson discusses advanced setup 
 > and concepts of SSH and key pairs, and other material supplemental to git related SSH. 
 {: .callout}
 
@@ -286,6 +291,30 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 {: .output}
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
+
+### 3.3 Using ssh-agent and adding your key
+Whenever Git needs your key to authenticate to GitHub you will have to type your passphrase. 
+This process may become tedious and can be avoided using a key manager like ssh-agent.  
+It holds your keys and certificates in memory, unencrypted, and ready for use by ssh. 
+To start a session run:
+~~~
+eval $(ssh-agent)
+~~~
+{: .language-bash}
+
+To add keys use:
+~~~
+ssh-add
+~~~
+{: .language-bash}
+This will find and add the defeult keys in `~/.ssh/`, including ` ~/.ssh/id_ed25519` that we created above.
+You will have to type the passphrase of each added key.
+
+To end a session run:
+~~~
+kill $SSH_AGENT_PID
+~~~
+{: .language-bash}
 
 ## 4. Push local changes to a remote
 
