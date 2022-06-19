@@ -196,6 +196,12 @@ New changes can be added and then pushed to the branch just by running the stand
 On GitHub, you can switch branches by using the little drop down menu:
 ![Switch branch](../fig/github-switch-branch.png)
 
+# Add requirements in the base repository
+
+To avoid undesired changes in the base repository usually administrators will add restrictions, e.g.:
+- requiring at least one review before a Pull Request can be merged
+- 
+
 # Pull (Merge) Requests
 
 Pull requests can be used at this point to put the changes on the 'main' copy of the repository.
@@ -207,34 +213,38 @@ it will have a pull-down "Contribute" that allows to "Open pull request":
 ![Contribute (PR) menu](../fig/github-contribute.png)
 
 Either way you'll get to a window where you can review and create the pull request.
-The dialogue is pre-populated provavly with the correct values, anyway you can
+The dialogue is pre-populated probably with the correct values, anyway you can use dropboxes 
 pick the source and destination repository and branch, and a title and description
 (similar to the comments in the Git commits). 
 There are quite a few options. You should generally write a description that tells you what the changes are. If you are working on a project with other people, 'Assignees' are people who will be implementing changes (i.e. you) and reviewers are people who will check your work for any mistakes, code that could be written more elegantly, etc. - it is very good practice to get your code reviewed before merging and a GitHub project can also require that. 
 Finally you can compare the content and open the pull request:
-![Contribute (PR) menu](../fig/github-contribute-details.png)
+![Contribute (PR) dialog](../fig/github-contribute-details.png)
 
+The Pull Request will be open in the base repository and you and the project members will be able to have a conversation about the changes you submitted.
+There are 4 tabs in a Pull Request page:
+- Conversation, summarizes the interactions and allows communications between the submitter and reviewers
+- Commits, a list of Git commits included in this PR
+- Checks, the result of automatic tests
+- Files changed, a diff between the upstream branch and the one with the changes. This is the tab that can be used to comment the code and to ask for changes or approve the code.
 
+A reviewer can highlight lines on the "Files changed" tab and add comments to request changes.
+General comments can be added directly in the "Conversation" tab.
 
+A reviewer could also edit a file directly in the PR (i.e. in the branch that will be merged in the repository (the submitter can block this if desired).
+GitHub allows to edit files and commit changes directly on the Web. Convenient if the changes are small.
 
-Select the branch you did the extra work on, and then click 'Compare branches and continue'
-![GitHub select source branch](../fig/gitlab-select-source-branch.png)
+Finally the files are feady and a reviewer can approve the PR.
 
-You'll now see a page with quite a few options. You should generally write a description that tells you what the changes are. If you are working on a project with other people, 'Assignees' are people who will be implementing changes (i.e. you) and reviewers are people who will check your work for any mistakes, code that could be written more elegantly, etc. - it is very good practice to get your code reviewed before merging. 
-![GitHub merge request form](../fig/gitlab-create-mr-form.png)
+At this point someone with write permission on the repository can merge the PR.
+There are three options:
+- Create a merge commit: Preserves the original history of all commits.
+- Squash and merge: Useful if the PR has meany commits not so meaningful. Remember to write a commit message capturing all the changes
+- Rebase and merge: The most common if the PR branch was not shared or the base of other branches; adds all the commits on top after a rebase
 
-After submitting the form, the merge request will be created:
-![Submitted MR](../fig/gitlab-submitted-mr.png) 
+Choose the most appropriate and complete the merge.
+Frequently GitHub will ask to confirm the merge action.
 
+At this point the changes have been incorporated in the destination branch, in the original repository. 
+You can verify that inspecting the files.
 
-
-You can click 'Commits' on the top for a list of the commits, but more useful is the 'Changes' button, which shows you any changes you have made:
-![Changeset](../fig/gitlab-mr-changeset.png) 
-
-
-Going back to the 'overview' section. We'll talk about the 'pipelines' part in the next lesson. You can press the 'merge' button to put your changes into the 'main' branch. Normally, when work a branch is merged, we'd consider it finished, and we can safely delete the branch because our changes are incorporated, so leave the box 'Delete source branch' ticked. The status of the merge request will change to 'Merged':
-![Merged](../fig/gitlab-merged.png)
-
-Clicking the file in the repository on the Master branch, we can see that the change has been incorporated:
-
-![Change incorporated](../fig/gitlab-change-incorporated.png)
+The source branch of the PR can be deleted.
