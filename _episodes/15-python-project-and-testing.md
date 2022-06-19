@@ -1,5 +1,5 @@
 ---
-title: Setting up a Python project
+title: Setting up a Python Project
 teaching: 25
 exercises: 0
 questions:
