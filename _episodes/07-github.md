@@ -9,7 +9,7 @@ objectives:
 - "Push to or pull from a remote repository."
 keypoints:
 - "A local Git repository can be connected to one or more remote repositories."
-- "Use the SSH protocol to connect to remote repositories."
+- "Use OAuth via GitHub CLI or the SSH protocol to connect to remote repositories."
 - "`git push` copies changes from a local repository to a remote repository."
 - "`git pull` copies changes from a remote repository to a local repository."
 ---
@@ -78,17 +78,19 @@ identify it:
 
 ![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
 
-Click on the 'SSH' link to change the [protocol]({{ page.root }}{% link reference.md %}#protocol) from HTTPS to SSH.
+If you are using SSH (see below), click on the 'SSH' link to change the [protocol]({{ page.root }}{% link reference.md %}#protocol) from HTTPS to SSH.
 
 > ## HTTPS vs. SSH
 >
-> We use SSH here because, while it requires some additional configuration, it is a 
-> security protocol widely used by many applications.  An alternative is the 
-> [GitHub CLI (comman line interpreter)](https://cli.github.com/), `gh`.
-> Consoder using it to create
-> [access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
-> if it is available or you can install proframs on the machine where you are using 
-> the terminal.  The steps below describe SSH at a minimum level for GitHub.  A supplemental 
+> To commit changes to a repository you need a secure protocol.
+> We describe two alternatives provided by GitHub: HTTPS using the OAuth protocol and tokens and SSH.  
+> If you have the [GitHub CLI (comman line interpreter)](https://cli.github.com/), `gh`, it is very easy to use HTTPS.
+> The GitHub CLI may be available on your host, check with `gh --version`, or [easily installed](https://cli.github.com/manual/installation) on Mac, Windows or Linux (with admin privileges). 
+> Then you can create an [access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+> via `gh auth login` and authenticate via HTTPS.  
+> Otherwise, if not using GitHub CLI, use SSH as described below because. It requires some additional configuration, but it is a 
+> standard security protocol widely used by many applications.
+> The steps below describe SSH at a minimum level for GitHub. A supplemental 
 > episode to this lesson discusses advanced setup 
 > and concepts of SSH and key pairs, and other material supplemental to git related SSH. 
 {: .callout}
@@ -129,7 +131,9 @@ talking about how they might be used for collaboration.
 ## 3. SSH Background and Setup
 Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it’s him trying to connect to his remote repository. 
 
-We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.  
+Skip this section if you are using HTTPS and tokens via `gh auth login` as mentioned above in [HTTPS vs. SSH](#https-vs-ssh).
+
+Here are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure SHell protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.  
 
 SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. Very descriptive names.
 
