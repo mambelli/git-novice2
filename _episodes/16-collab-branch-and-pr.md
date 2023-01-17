@@ -196,11 +196,13 @@ New changes can be added and then pushed to the branch just by running the stand
 On GitHub, you can switch branches by using the little drop down menu:
 ![Switch branch](../fig/github-switch-branch.png)
 
-# Add requirements in the base repository
-
+# Add branch protection rules (requirements) in the base repository
 To avoid undesired changes in the base repository usually administrators will add restrictions, e.g.:
-- requiring at least one review before a Pull Request can be merged
-- 
+- block regular merges (not using a PR)
+- require at least one review before a Pull Request can be merged
+- require status check to pass before merging
+
+To set these requirements go to the original repository, in the "Settings" tab (the last on the right) select "Branches" from the menu on the left and under "Branch protection rules" you can press "Add rule" to add a new one or you can edit existing ones. Either ways you can click on the restrictions you'd like to enable.
 
 # Pull (Merge) Requests
 
@@ -248,3 +250,14 @@ At this point the changes have been incorporated in the destination branch, in t
 You can verify that inspecting the files.
 
 The source branch of the PR can be deleted.
+
+# Keeping up with upstream changes
+Assuming that you are working on a project with many other collaborators, the main repository
+will change frequently.
+
+To keep your fork in sync, GitHub has a "Sync fork" pull-down in the status bar before your code (the same one where the contribute pull-down is).
+In it there is a green "Update branch" button that allows you to rebase your code to the upstream content. 
+Then you can push updated local copuies.
+This process is fairly straight forward, especially if you keep your main/master branch as a mirror of the upstream one and do all your contribution in separate feature branches.
+
+Alternatively, you cn manage both your fork and the upstream repo as remotes in a local clone and manually pull and rebase as desired. This gives you more control but may be more complex.
