@@ -25,8 +25,8 @@ play Owner and Collaborator.
 > won't need to give anyone access on GitHub, because both 'partners' are you.
 {: .callout}
 
-The Owner needs to give the Collaborator access. On GitHub, click the settings
-button on the right, select Manage access, click Invite a collaborator, and
+The Owner needs to give the Collaborator access. On GitHub, click the "Settings"
+button on the right, select "Collaborators", click "Add people", and
 then enter your partner's username.
 
 ![Adding Collaborators on GitHub](../fig/github-add-collaborators.png)
@@ -214,10 +214,10 @@ GitHub) are back in sync.
 > The Collaborator has some questions about one line change made by the Owner and
 > has some suggestions to propose.
 >
-> With GitHub, it is possible to comment the diff of a commit. Over the line of
+> With GitHub, it is possible to comment on the diff of a commit. Over the line of
 > code to comment, a blue comment icon appears to open a comment window.
 >
-> The Collaborator posts its comments and suggestions using GitHub interface.
+> The Collaborator posts her comments and suggestions using the GitHub interface.
 {: .challenge}
 
 > ## Version History, Backup, and Version Control
