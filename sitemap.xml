@@ -43,6 +43,12 @@
     <loc>https://swcarpentry.github.io/git-novice/14-supplemental-rstudio.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/git-novice/15-python-project-and-testing.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/git-novice/16-collab-branch-and-pr.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/git-novice/404.html</loc>
   </url>
   <url>
@@ -104,6 +110,12 @@
   </url>
   <url>
     <loc>https://swcarpentry.github.io/git-novice/instructor/14-supplemental-rstudio.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/git-novice/instructor/15-python-project-and-testing.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/git-novice/instructor/16-collab-branch-and-pr.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/git-novice/instructor/404.html</loc>

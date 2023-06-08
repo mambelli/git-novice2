@@ -73,6 +73,8 @@ episodes:
 - 12-citation.md
 - 13-hosting.md
 - 14-supplemental-rstudio.md
+- 15-python-project-and-testing.md
+- 16-collab-branch-and-pr.md
 
 # Information for Learners
 learners: 

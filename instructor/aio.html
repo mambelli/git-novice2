@@ -335,6 +335,30 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="15-python-project-and-testing.html">15. Setting up a Python Project</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush17">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading17">
+        <a href="16-collab-branch-and-pr.html">16. Collaborating - Branching and Pull Requests</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -2461,7 +2485,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>checkout</code> command restores files from the repository,
@@ -2525,7 +2549,7 @@ e.g. 0b1d055).</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -2590,7 +2614,7 @@ changes to the repository.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The command <code>git add venus.txt</code> places the current version
@@ -2656,7 +2680,7 @@ use <code>git checkout</code> to see if you can remove your change.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>After adding a change, <code>git checkout</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -4256,7 +4280,7 @@ has changed with command line? And on GitHub?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4697,7 +4721,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4942,7 +4966,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5772,6 +5796,813 @@ should be enough to get you started!</p>
 <li>Using RStudio’s Git integration allows you to version control a
 project over time.</li>
 </ul>
+</div>
+</div>
+</div></section><section id="aio-15-python-project-and-testing"><p>Content from <a href="15-python-project-and-testing.html">Setting up a Python Project</a></p>
+<hr>
+<p> Last updated on 2023-06-08 | 
+        
+        <a href="https://github.com/mambelli/git-novice2/edit/main/episodes/15-python-project-and-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How should I structure a Python project?</li>
+<li>How can I test my code to prevent bugs?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Make our repository follow a ‘standard’ Python project format</li>
+<li>Add a test and testing framework</li>
+<li>Run the tests and a linter on GitLab - using a branch and a Pull
+Request</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level1">
+<h1 id="structuring-a-project">Structuring a Project<a class="anchor" aria-label="anchor" href="#structuring-a-project"></a>
+</h1>
+<p>Vlad and Wolfsman are still investigating how to send a planetary
+lander to Mars and other planets or moons. They need to start crunching
+numbers and they decided to start a Python project.</p>
+<p><img src="../fig/planetsmath.png" alt="planetsmath" class="figure"><a href="https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg" class="external-link">Mars</a>
+by European Space Agency / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" class="external-link">CC-BY-SA 3.0
+IGO</a>. <a href="https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png" class="external-link">Pluto</a>
+/ Courtesy NASA/JPL-Caltech. <a href="https://commons.wikimedia.org/wiki/File:Lune_ico.png" class="external-link">Moon</a> ©
+Luc Viatour / <a href="https://lucnix.be/" class="external-link">https://lucnix.be</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" class="external-link">CC BY-SA
+3.0</a>. <a href="https://www.kissclipart.com/rocket-ship-no-background-clipart-spacecraft-rocke-gwjlam/" class="external-link">Spacecraft</a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link">CC
+0</a>.</p>
+<p>Most Python projects are structured in a similar way. There are very
+good reasons for this - if you follow the ‘standard’, other people who
+approach your code will recognise parts of it and will know by default
+how to install your code, run any tests that might exist, and where to
+look for source code or to change things like the dependencies that are
+required.</p>
+<p>The following is a simple Python project with a typical structure
+(the <code>.git</code> directory is omitted):</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>planetsmath/
+├── DEVELOPMENT.md
+├── .editorconfig
+├── .github
+│   └── workflows
+│       ├── linters.yaml
+│       └── pytest.yaml
+├── .gitignore
+├── LICENSES
+│   └── Apache-2.0.txt
+├── LICENSE.txt
+├── .pre-commit-config.yaml
+├── .pylintrc
+├── README.md
+├── requirements.txt
+├── .reuse
+│   ├── dep5
+│   └── templates
+│       └── compact.jinja2
+├── setup.py
+└── src
+    └── planetsmath
+        ├── functions.py
+        ├── __init__.py
+        └── test_functions.py</code></pre>
+</div>
+<p>You can see this sample project <a href="https://github.com/mambelli/planetsmath" class="external-link">here</a> and clone it
+with:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone git@github.com:mambelli/planetsmath.git</span></code></pre>
+</div>
+<p>We’ll talk of these folders/files one at a time:</p>
+<div class="section level2">
+<h2 id="src">src/<a class="anchor" aria-label="anchor" href="#src"></a>
+</h2>
+<p>The source tree where all the Python files reside.</p>
+</div>
+<div class="section level2">
+<h2 id="planetsmath">planetsmath/<a class="anchor" aria-label="anchor" href="#planetsmath"></a>
+</h2>
+<p>Inside the project source tree we normally have a folder which
+matches the name of the Python module. This is done so that from the src
+directory, the code within the module can be imported with:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> planetsmath</span></code></pre>
+</div>
+<p>You can see this for e.g. in the source repository of the <a href="https://github.com/numpy/numpy" class="external-link">NumPy library</a>.</p>
+<p>Within this folder, we can store code files (e.g. functions.py) and
+further subdirectories. These will then be importable too.</p>
+<div class="section level3">
+<h3 id="functions-py">functions.py<a class="anchor" aria-label="anchor" href="#functions-py"></a>
+</h3>
+<p>This is just a standard Python file with methods in it. You can have
+as many of these as you like, but generally people organise them around
+what the code is doing. So for e.g if you have a few methods that deal
+with I/O, you might create a file called <code>io.py</code> and put all
+of those methods there. Organising your code across multiple files like
+this is a very good idea - it makes it easier to find things.</p>
+</div>
+<div class="section level3">
+<h3 id="init__-py">
+<code>__init__.py</code><a class="anchor" aria-label="anchor" href="#init__-py"></a>
+</h3>
+<p>The <code>__init__.py</code> file is effectively as set of
+instructions that get run when you import a Python module. So with a
+blank <code>__init__.py</code>, nothing happens if you run
+<code>import planetsmath</code> in a Python session. If you want to use
+methods from the functions.py file. What is common is to import certain
+methods into the top level of the module, for e.g.:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .functions <span class="im">import</span> sum_function</span></code></pre>
+</div>
+<p>Then, in a Python session, you would be able to do the following:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> planetsmath</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> planetsmath.sum_function([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="section level2">
+<h2 id="setup-py">setup.py<a class="anchor" aria-label="anchor" href="#setup-py"></a>
+</h2>
+<p>A setup.py file is just a list of instructions for Python that tell
+it how to install your package, and what it’s made up of. There are a
+myriad of options, but a very simple one for this project could be:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> setuptools <span class="im">import</span> setup</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>setup(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="st">'planets'</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        version<span class="op">=</span><span class="st">'0.0.1'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        packages<span class="op">=</span>[<span class="st">'planetsmath'</span>],</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        install_requires<span class="op">=</span>[</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'numpy'</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre>
+</div>
+<p>Notice that there is a section called ‘install_requires’. This isn’t
+required for our package, as we’re not using NumPy, but it is very
+common to see a list of external packages here. On install with pip,
+Python will check to see if it can import ‘numpy’ and ‘matplotlib’. If
+it can’t, the installation will fail.</p>
+</div>
+<div class="section level2">
+<h2 id="requirements-txt">requirements.txt<a class="anchor" aria-label="anchor" href="#requirements-txt"></a>
+</h2>
+<p>This is just a text file where you can put any dependencies your
+package needs to work. If necessary, you can constrain some of your
+package dependencies to specific versions, for e.g.:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>pytest
+numpy&gt;=1.21.4</code></pre>
+</div>
+<p>To install all of the dependencies, you can run
+<code>pip install -r requirements.txt</code>. This is well known by most
+people working with Python. Generally you should try to install things
+via pip like this, and not via Anaconda (unless you have no choice).
+This is because Anaconda is less portable: - Is not usable by commercial
+organisations without a paid for license. This matters if you have
+external companies as collaborators - Was introduced mainly for
+distributing compiled dependencies. This is now well handled by pip with
+the introduction of <code>wheels</code> - Anaconda is not usable or is
+heavily discouraged on many HPC clusters.</p>
+</div>
+<div class="section level2">
+<h2 id="readme-md">README.md<a class="anchor" aria-label="anchor" href="#readme-md"></a>
+</h2>
+<p>This file offers general information about the project. It is the one
+displayed by GitHub at the end of the code page. It is possible to add
+badges with the status of the CI tests.</p>
+</div>
+<div class="section level2">
+<h2 id="other-files">Other files<a class="anchor" aria-label="anchor" href="#other-files"></a>
+</h2>
+<ul>
+<li>
+<code>DEVELOPMENT.md</code>: instructions for collaborators and your
+future self.</li>
+<li>
+<code>LICENSE.txt</code> (and <code>.reuse</code> and
+<code>LICENSES</code>): it’s the common place for your project’s
+license, seen also in the <a href="11-licensing.html">licensing
+episode</a>, very important when making your code public. See the <a href="#id_%20Licensing%20compliance">Licensing compliance section</a>
+below for a complete licensing solution : reuse can establish and verify
+licensing complaiance.</li>
+<li>
+<code>src/planetsmath/test_functions.py</code>: unit tests for
+<code>functions.py</code>, see the (testing section)[# GitHub CI: unit
+tests and linting] below.</li>
+</ul>
+<p>Hidden files, visible with <code>ls -a</code>: -
+<code>.editorconfig</code>: joint comfiguration recognized by many
+different editors - <code>.git</code> and <code>.gitignore</code>: Git
+internal files, seen in the <a href="03-create.html">Creating a
+repository</a> and <a href="06-ignore.html">Ignoring Things</a> episodes
+respectively - <code>.github</code> directory: contains GitHub
+automation files, see the <a href="#id_%20GitHub%20CI:%20unit%20tests%20and%20linting">testing and
+GitHub CI section</a> below. - <code>.pre-commit-config.yaml</code>:
+pre-commit configuration file, see the <a href="#id_%20Adding%20Pre-commit%20checks">next section</a>. -
+<code>.pylintrc</code>: configuration file of pylint, a python
+linter</p>
+</div>
+</div>
+<div class="section level1">
+<h1 id="adding-pre-commit-checks">Adding Pre-commit checks<a class="anchor" aria-label="anchor" href="#adding-pre-commit-checks"></a>
+</h1>
+<p>It is possible to run some checks before each commit command, taking
+advantage of the hooks mechanism in Git. A pre-commit will guarantee
+that committed code always follows the desired standard. To start using
+pre-commit you have to add a pre-commit config file and to install
+pre-commit.</p>
+<p>Add a pre-commit config file named
+<code>.pre-commit-config.yaml</code> with the following content for an
+initial set of checks:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For more information see</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  https://pre-commit.com/index.html#install</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  https://pre-commit.com/index.html#automatically-enabling-pre-commit-on-repositories</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">default_language_version</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">  # force all unspecified python hooks to run python3</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">python</span><span class="kw">:</span><span class="at"> python3</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/pre-commit/pre-commit-hooks"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v4.1.0</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-ast</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-docstring-first</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-toml</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-merge-conflict</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-yaml</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> end-of-file-fixer</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> fix-byte-order-marker</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mixed-line-ending</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> trailing-whitespace</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="st">"--markdown-linebreak-ext=md"</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/pre-commit/pygrep-hooks"</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.9.0</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> python-check-blanket-noqa</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> python-check-blanket-type-ignore</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> python-use-type-annotations</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/pycqa/isort"</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> </span><span class="fl">5.10.1</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> isort</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/psf/black"</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> </span><span class="fl">22.3.0</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> black</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/pre-commit/mirrors-prettier"</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v2.6.2</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> prettier</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">exclude_types</span><span class="kw">:</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="st">"python"</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">additional_dependencies</span><span class="kw">:</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="st">"prettier"</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="st">"prettier-plugin-toml@0.3.1"</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/asottile/pyupgrade"</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v2.31.0</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> pyupgrade</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="st">"--py36-plus"</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/fsfe/reuse-tool"</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.14.0</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> reuse</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">additional_dependencies</span><span class="kw">:</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> python-debian==0.1.40</span></span></code></pre>
+</div>
+<p>To install it run from the repository root:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pre-commit</span> install</span></code></pre>
+</div>
+<p>You may want to setup automatic notifications for pre-commit enabled
+repos. This will suggest updates to your
+<code>.pre-commit-config.yaml</code>: <a href="https://pre-commit.com/index.html#automatically-enabling-pre-commit-on-repositories" class="external-link uri">https://pre-commit.com/index.html#automatically-enabling-pre-commit-on-repositories</a></p>
+<p>You can also run pre-commit manually to check all the files:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pre-commit</span> run <span class="at">--all-files</span></span></code></pre>
+</div>
+</div>
+<div class="section level1">
+<h1 id="licensing-compliance">Licensing compliance<a class="anchor" aria-label="anchor" href="#licensing-compliance"></a>
+</h1>
+<p>Planets Math is released under the Apache 2.0 license and license
+compliance is handled with the <a href="http://reuse.software/" class="external-link">REUSE</a> tool. REUSE is installed as
+development dependency or you can install it manually
+(<code>pip install reuse</code>). All files should have a license
+notice:</p>
+<ul>
+<li><p>to check compliance you can use <code>reuse lint</code>. This is
+the command run also by the pre-commit and CI checks</p></li>
+<li>
+<p>you can add on top of new files <a href="https://spdx.org/licenses/" class="external-link">SPDX license notices</a> like</p>
+<pre><code><span><span class="co"># SPDX-FileCopyrightText: 2022 Fermi Research Alliance, LLC</span></span>
+<span><span class="co"># SPDX-License-Identifier: Apache-2.0</span></span></code></pre>
+</li>
+<li>
+<p>or let REUSE do that for you (<code>FILEPATH</code> is your new
+file):</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">reuse</span> addheader <span class="at">--year</span> 2023 <span class="at">--copyright</span><span class="op">=</span><span class="st">"Fermi Research Alliance, LLC"</span> <span class="dt">\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--license</span><span class="op">=</span><span class="st">"Apache-2.0"</span> <span class="at">--template</span><span class="op">=</span>compact FILEPATH</span></code></pre>
+</div>
+</li>
+<li><p>Files that are not supported and have no comments to add the SPDX
+notice can be added to the <code>.reuse/dep5</code> file</p></li>
+<li><p>New licenses can be added to the project using
+<code>reuse download LCENSEID</code>. Please contact project management
+if this is needed.</p></li>
+</ul>
+</div>
+<div class="section level1">
+<h1 id="github-ci-unit-tests-and-linting">GitHub CI: unit tests and linting<a class="anchor" aria-label="anchor" href="#github-ci-unit-tests-and-linting"></a>
+</h1>
+<p>First, we’ll introduce a new file. In the
+<code>src/planetsmath</code> subdirectory, in a file called
+<code>test_functions.py</code> we can write any tests of methods in
+<code>functions.py</code>. The library <code>pytest</code> is commonly
+used for unit tests like this. Pytest can pick up tests written in the
+following way:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .functions <span class="im">import</span> sum_function</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_sum_function():</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> sum_function([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]) <span class="op">==</span> <span class="fl">15.0</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> sum_function([<span class="dv">1</span>, <span class="fl">2.2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]) <span class="op">==</span> <span class="fl">15.2</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> sum_function([<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]) <span class="op">==</span> <span class="dv">13</span></span></code></pre>
+</div>
+<p>Note that both the file name and the method inside have the same name
+of the module and function they wasnt to test, but are preceded with
+<code>test_</code> - this is compulsory!</p>
+<p>With this, when pytest is installed, you can run ‘py.test -v’ at the
+command line, and all of your tests will run. With unit tests like this,
+you can check your code for correctness.</p>
+<p>Next, create a file called <code>.github/workflows/pytest.yaml</code>
+with the following content:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="an">SPDX-FileCopyrightText:</span><span class="co"> 2022 Fermi Research Alliance, LLC</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="an">SPDX-License-Identifier:</span><span class="co"> Apache-2.0</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> PyTest</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"**"</span><span class="co"> # matches every branch</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run_linters</span><span class="kw">:</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run unit test against code tree</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> checkout code tree</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.7</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v2</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.7"</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">architecture</span><span class="kw">:</span><span class="at"> </span><span class="st">"x64"</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>          python3 -m pip install --upgrade pip</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>          if [ -f requirements.txt ]; then python3 -m pip install -r requirements.txt; fi</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Unit test</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">PYTHONPATH</span><span class="kw">:</span><span class="at"> ${{ github.workspace }}/src</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>          python3 -m pytest --import-mode=append src</span></code></pre>
+</div>
+<p>This is a basic recipe that will allow your tests to run on GitHub.
+Add both of these files to your staging area and commit them, and then
+push to GitHub.</p>
+<p>The <code>planetsmath</code> example includes a second CI
+configuration file, to run common Python linters.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>While there is often variation, most Python projects follow a
+similar structure for their code</li>
+<li>Doing so is beneficial because it allows components of your code to
+be reused more easily by yourself and others</li>
+<li>Testing can be ‘automatic’ rather than manual. This catches many
+issues before they become a problem - this is continuous
+integration</li>
+<li>The concepts here can be used for all programming languages - not
+just Python - and are pretty much universally used by professional
+software developers</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section id="aio-16-collab-branch-and-pr"><p>Content from <a href="16-collab-branch-and-pr.html">Collaborating - Branching and Pull Requests</a></p>
+<hr>
+<p> Last updated on 2023-06-08 | 
+        
+        <a href="https://github.com/mambelli/git-novice2/edit/main/episodes/16-collab-branch-and-pr.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How can I use version control to collaborate with other people more
+effectively?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Create a branch</li>
+<li>Push the branch to a repository</li>
+<li>Make a pull request to the repository</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Often, we want to work on a set of changes that are more complicated
+than what was shown in the last lesson, and without affecting other
+people’s work. Think for example, what would happen if I made a change
+to code that someone else was using, but left it in a broken state. They
+would probably not be very happy with me! To this effect, we can use a
+concept called ‘branches’ to separate works-in-progress from the known
+‘good’ copy of the code. In general, it’s considered good practice to
+create a branch for every piece of work that you do, and to merge these
+into the ‘good’ version regularly.</p>
+<div class="section level1">
+<h1 id="forking-a-repository">Forking a repository<a class="anchor" aria-label="anchor" href="#forking-a-repository"></a>
+</h1>
+<p>Frequently you may not have write access to a Git repository or we
+may want to have more control on how the changes get merged in that
+repository. So we create our own personal copy of the repository, linked
+to the original one. This is called a ‘forked’ repository, frequently
+but not always it has the same name of the original repository.</p>
+<p>To create a fork go on GitHub to the page of the repository you’d
+like to fork, e.g. <code>https://github.com/vlad/planets.git</code>,
+then click on the ‘fork’ button, close to the top roght of the windows:
+<img src="../fig/github-fork.png" alt="Fork a repository" class="figure"></p>
+<p>A new page will let you choose the details of the fork: - the owner,
+you or one of your organizations - the name of the repository, by
+default the same as the forked repository (unless there is a conflict in
+your space) <img src="../fig/github-fork-details.png" alt="Fork windows" class="figure"></p>
+<p>Let’s say you are wolfsman and forked the repository maintaining the
+name. Now you can clone your personal copy:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone git@github.com:wolfsman/planets.git ~/Desktop/planets</span></code></pre>
+</div>
+</div>
+<div class="section level1">
+<h1 id="creating-a-new-branch-with-changes">Creating a new branch with changes<a class="anchor" aria-label="anchor" href="#creating-a-new-branch-with-changes"></a>
+</h1>
+<p>To create a new branch, run the following command in your
+repository:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> add-square-array-method</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Switched to a new branch 'add-square-array-method'</code></pre>
+</div>
+<p>This creates a separate area for us to work in and add changes. It’s
+a bit like how we cloned the repository in a separate place in the last
+lesson. However, we can also push our branch to the remote repository
+and keep it backed up.</p>
+<p>We’ll add a function that takes in a list, and squares all of the
+elements in it, returning a new array. In the
+<code>src/planetsmath/</code> directory:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano functions.py</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tail <span class="at">-n</span> 2 functions.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>def square_array(list):
+    return [item*item for item in list]</code></pre>
+</div>
+<p>Then we’ll commit it as normal:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add functions.py</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add a method that squares a list"</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[add-square-array-method ea4141e] Add a method that squares a list
+ 1 file changed, 4 insertions(+)</code></pre>
+</div>
+<p>Notice now that instead of saying ‘main’ here, it says
+‘add-square-array-method’, showing us that our commit is on our branch.
+We’ve sort of glossed over it previously, but ‘main’ is the “default
+branch” in Git. In some older git versions this was named ‘master’, so
+you may see this instead.</p>
+<p>Our commit is now saved in our local repository. If you want to, you
+can switch back to the ‘main’ branch by doing:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Switched to branch 'main'</code></pre>
+</div>
+<p>If you now print the file, you’ll see that our new method isn’t
+there:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> functions.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code># SPDX-FileCopyrightText: 2022 Fermi Research Alliance, LLC
+# SPDX-License-Identifier: Apache-2.0
+
+def sum_function(list):
+    """
+    A function which takes a list as an argument and
+    returns the sum
+
+    Parameters
+    ----------
+    list: list
+        Must be floats or ints
+
+    Returns
+    -------
+    float:
+        The sum of the elements in list
+    """
+    sum = 0.0
+    for item in list:
+        sum += item
+    return sum
+
+
+def sum_product(list):
+    product = 1.0
+    for item in list:
+        product *= item
+    return product</code></pre>
+</div>
+</div>
+<div class="section level1">
+<h1 id="pushing-a-new-branch">Pushing a new branch<a class="anchor" aria-label="anchor" href="#pushing-a-new-branch"></a>
+</h1>
+<p>We’ll switch back to our branch again:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout add-square-array-method</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Switched to branch 'add-square-array-method'</code></pre>
+</div>
+<p>We can put our changes onto GitHub by pushing it. However, if you run
+<code>git push</code>, it won’t immediately work:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>fatal: The current branch add-square-array-method has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin add-square-array-method</code></pre>
+</div>
+<p>This message just means that the remote doesn’t have a branch
+<em>called</em> add-square-array-method to push our work to. We can
+create one in our push just by running the command it gives us:</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push <span class="at">--set-upstream</span> origin add-square-array-method</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 460 bytes | 460.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'add-square-array-method' on GitHub by visiting:
+remote:      https://github.com/wolfsman/planetsmath/pull/new/add-square-array-method
+remote:
+To https://github.com/wolfsman/planetsmath.git
+ * [new branch]      add-square-array-method -&gt; add-square-array-method
+Branch 'add-square-array-method' set up to track remote branch 'add-square-array-method' from 'origin'.</code></pre>
+</div>
+<p>This slightly convoluted message tells us that:</p>
+<ul>
+<li>A new branch was created on the remote GitHub version of the
+repository</li>
+<li>Our local copy is associated with the remote branch</li>
+<li>We pushed that commit</li>
+<li>We can easily create a pull request following the link provided</li>
+<li>Our repository is a fork of another repository and the changes can
+be fed upstream by opening a Pull Request (see the next section)</li>
+</ul>
+<p>New changes can be added and then pushed to the branch just by
+running the standard commit and push commands now. It’s worth noting
+that <code>git push</code> only applies to the branch that you are
+currently working on - if you make changes on “main”, then switch to the
+“add-square-array-method” and run <code>git push</code>, the main
+changes will not be uploaded to GitHub.</p>
+<p>On GitHub, you can switch branches by using the little drop down
+menu: <img src="../fig/github-switch-branch.png" alt="Switch branch" class="figure"></p>
+</div>
+<div class="section level1">
+<h1 id="add-branch-protection-rules-requirements-in-the-base-repository">Add branch protection rules (requirements) in the base
+repository<a class="anchor" aria-label="anchor" href="#add-branch-protection-rules-requirements-in-the-base-repository"></a>
+</h1>
+<p>To avoid undesired changes in the base repository usually
+administrators will add restrictions, e.g.: - block regular merges (not
+using a PR) - require at least one review before a Pull Request can be
+merged - require status check to pass before merging</p>
+<p>To set these requirements go to the original repository, in the
+“Settings” tab (the last on the right) select “Branches” from the menu
+on the left and under “Branch protection rules” you can press “Add rule”
+to add a new one or you can edit existing ones. Either ways you can
+click on the restrictions you’d like to enable.</p>
+</div>
+<div class="section level1">
+<h1 id="pull-merge-requests">Pull (Merge) Requests<a class="anchor" aria-label="anchor" href="#pull-merge-requests"></a>
+</h1>
+<p>Pull requests can be used at this point to put the changes on the
+‘main’ copy of the repository.</p>
+<p>The easiest way to open a pull request is to use the URL suggested by
+Git, like
+<code>https://github.com/wolfsman/planetsmath/pull/new/add-square-array-method</code>
+at the end of the previos section. Alternatively, go back to your
+personal repository on GitHub and since it is the result of a fork, it
+will have a pull-down “Contribute” that allows to “Open pull request”:
+<img src="../fig/github-contribute.png" alt="Contribute (PR) menu" class="figure"></p>
+<p>Either way you’ll get to a window where you can review and create the
+pull request. The dialogue is pre-populated probably with the correct
+values, anyway you can use dropboxes pick the source and destination
+repository and branch, and a title and description (similar to the
+comments in the Git commits). There are quite a few options. You should
+generally write a description that tells you what the changes are. If
+you are working on a project with other people, ‘Assignees’ are people
+who will be implementing changes (i.e. you) and reviewers are people who
+will check your work for any mistakes, code that could be written more
+elegantly, etc. - it is very good practice to get your code reviewed
+before merging and a GitHub project can also require that. Finally you
+can compare the content and open the pull request: <img src="../fig/github-contribute-details.png" alt="Contribute (PR) dialog" class="figure"></p>
+<p>The Pull Request will be open in the base repository and you and the
+project members will be able to have a conversation about the changes
+you submitted. There are 4 tabs in a Pull Request page: - Conversation,
+summarizes the interactions and allows communications between the
+submitter and reviewers - Commits, a list of Git commits included in
+this PR - Checks, the result of automatic tests - Files changed, a diff
+between the upstream branch and the one with the changes. This is the
+tab that can be used to comment the code and to ask for changes or
+approve the code.</p>
+<p>A reviewer can highlight lines on the “Files changed” tab and add
+comments to request changes. General comments can be added directly in
+the “Conversation” tab.</p>
+<p>A reviewer could also edit a file directly in the PR (i.e. in the
+branch that will be merged in the repository (the submitter can block
+this if desired). GitHub allows to edit files and commit changes
+directly on the Web. Convenient if the changes are small.</p>
+<p>Finally the files are feady and a reviewer can approve the PR.</p>
+<p>At this point someone with write permission on the repository can
+merge the PR. There are three options: - Create a merge commit:
+Preserves the original history of all commits. - Squash and merge:
+Useful if the PR has meany commits not so meaningful. Remember to write
+a commit message capturing all the changes - Rebase and merge: The most
+common if the PR branch was not shared or the base of other branches;
+adds all the commits on top after a rebase</p>
+<p>Choose the most appropriate and complete the merge. Frequently GitHub
+will ask to confirm the merge action.</p>
+<p>At this point the changes have been incorporated in the destination
+branch, in the original repository. You can verify that inspecting the
+files.</p>
+<p>The source branch of the PR can be deleted.</p>
+</div>
+<div class="section level1">
+<h1 id="keeping-up-with-upstream-changes">Keeping up with upstream changes<a class="anchor" aria-label="anchor" href="#keeping-up-with-upstream-changes"></a>
+</h1>
+<p>Assuming that you are working on a project with many other
+collaborators, the main repository will change frequently.</p>
+<p>To keep your fork in sync, GitHub has a “Sync fork” pull-down in the
+status bar before your code (the same one where the contribute pull-down
+is). In it there is a green “Update branch” button that allows you to
+rebase your code to the upstream content. Then you can push updated
+local copuies. This process is fairly straight forward, especially if
+you keep your main/master branch as a mirror of the upstream one and do
+all your contribution in separate feature branches.</p>
+<p>Alternatively, you cn manage both your fork and the upstream repo as
+remotes in a local clone and manually pull and rebase as desired. This
+gives you more control but may be more complex.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>
+<code>git checkout -b branchname</code> creates a branch that you
+can work on a set of changes</li>
+<li>
+<code>git checkout branchname</code> switches between branches</li>
+<li>Creating pull requests is the way most people work with Git and is
+good practice</li>
+<li>Before pull requests can be merged, there must be no merge
+conflicts</li>
+</ul>
+</div>
 </div>
 </div>
 </div></section>

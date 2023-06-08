@@ -338,6 +338,30 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="15-python-project-and-testing.html">15. Setting up a Python Project</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush17">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading17">
+        <a href="16-collab-branch-and-pr.html">16. Collaborating - Branching and Pull Requests</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -503,7 +527,65 @@ Luc Viatour / <a href="https://lucnix.be/" class="external-link">https://lucnix.
 <figure><img src="fig/RStudio_screenshot_viewhistory.png" class="figure mx-auto d-block"></figure><hr>
 <h3 id="14-supplemental-rstudio-figure-10">Figure 10</h3>
 <p aria-hidden="true">Image 1 of 1: ‘RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and *.Rproj added to the end’</p>
-<figure><img src="fig/RStudio_screenshot_gitignore.png" alt="RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and *.Rproj added to the end" class="figure mx-auto d-block"></figure><hr></section>
+<figure><img src="fig/RStudio_screenshot_gitignore.png" alt="RStudio screenshot showing .gitignore open in the editor pane with the files .Rproj.user, .Rhistory, .RData, and *.Rproj added to the end" class="figure mx-auto d-block"></figure><hr></section><section id="15-python-project-and-testing"><h2 class="section-heading"><a href="15-python-project-and-testing.html">Setting up a Python ProjectStructuring a Project<a class="anchor" aria-label="anchor" href="#structuring-a-project"></a>Adding Pre-commit checks<a class="anchor" aria-label="anchor" href="#adding-pre-commit-checks"></a>Licensing compliance<a class="anchor" aria-label="anchor" href="#licensing-compliance"></a>GitHub CI: unit tests and linting<a class="anchor" aria-label="anchor" href="#github-ci-unit-tests-and-linting"></a></a></h2>
+<hr class="half-width">
+<h3 id="15-python-project-and-testing-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘planetsmath’</p>
+<p><img src="fig/planetsmath.png" alt="planetsmath" class="figure"><a href="https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg" class="external-link">Mars</a>
+by European Space Agency / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" class="external-link">CC-BY-SA 3.0
+IGO</a>. <a href="https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png" class="external-link">Pluto</a>
+/ Courtesy NASA/JPL-Caltech. <a href="https://commons.wikimedia.org/wiki/File:Lune_ico.png" class="external-link">Moon</a> ©
+Luc Viatour / <a href="https://lucnix.be/" class="external-link">https://lucnix.be</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" class="external-link">CC BY-SA
+3.0</a>. <a href="https://www.kissclipart.com/rocket-ship-no-background-clipart-spacecraft-rocke-gwjlam/" class="external-link">Spacecraft</a>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link">CC
+0</a>.</p>
+<hr></section><section id="16-collab-branch-and-pr"><h2 class="section-heading"><a href="16-collab-branch-and-pr.html">Collaborating - Branching and Pull RequestsForking a repository<a class="anchor" aria-label="anchor" href="#forking-a-repository"></a>Creating a new branch with changes<a class="anchor" aria-label="anchor" href="#creating-a-new-branch-with-changes"></a>Pushing a new branch<a class="anchor" aria-label="anchor" href="#pushing-a-new-branch"></a>Add branch protection rules (requirements) in the base
+repository<a class="anchor" aria-label="anchor" href="#add-branch-protection-rules-requirements-in-the-base-repository"></a>Pull (Merge) Requests<a class="anchor" aria-label="anchor" href="#pull-merge-requests"></a>Keeping up with upstream changes<a class="anchor" aria-label="anchor" href="#keeping-up-with-upstream-changes"></a></a></h2>
+<hr class="half-width">
+<h3 id="16-collab-branch-and-pr-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fork a repository’</p>
+<p>To create a fork go on GitHub to the page of the repository you’d
+like to fork, e.g. <code>https://github.com/vlad/planets.git</code>,
+then click on the ‘fork’ button, close to the top roght of the windows:
+<img src="fig/github-fork.png" alt="Fork a repository" class="figure"></p>
+<hr>
+<h3 id="16-collab-branch-and-pr-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fork windows’</p>
+<p>A new page will let you choose the details of the fork: - the owner,
+you or one of your organizations - the name of the repository, by
+default the same as the forked repository (unless there is a conflict in
+your space) <img src="fig/github-fork-details.png" alt="Fork windows" class="figure"></p>
+<hr>
+<h3 id="16-collab-branch-and-pr-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Switch branch’</p>
+<p>On GitHub, you can switch branches by using the little drop down
+menu: <img src="fig/github-switch-branch.png" alt="Switch branch" class="figure"></p>
+<hr>
+<h3 id="16-collab-branch-and-pr-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Contribute (PR) menu’</p>
+<p>The easiest way to open a pull request is to use the URL suggested by
+Git, like
+<code>https://github.com/wolfsman/planetsmath/pull/new/add-square-array-method</code>
+at the end of the previos section. Alternatively, go back to your
+personal repository on GitHub and since it is the result of a fork, it
+will have a pull-down “Contribute” that allows to “Open pull request”:
+<img src="fig/github-contribute.png" alt="Contribute (PR) menu" class="figure"></p>
+<hr>
+<h3 id="16-collab-branch-and-pr-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Contribute (PR) dialog’</p>
+<p>Either way you’ll get to a window where you can review and create the
+pull request. The dialogue is pre-populated probably with the correct
+values, anyway you can use dropboxes pick the source and destination
+repository and branch, and a title and description (similar to the
+comments in the Git commits). There are quite a few options. You should
+generally write a description that tells you what the changes are. If
+you are working on a project with other people, ‘Assignees’ are people
+who will be implementing changes (i.e. you) and reviewers are people who
+will check your work for any mistakes, code that could be written more
+elegantly, etc. - it is very good practice to get your code reviewed
+before merging and a GitHub project can also require that. Finally you
+can compare the content and open the pull request: <img src="fig/github-contribute-details.png" alt="Contribute (PR) dialog" class="figure"></p>
+<hr></section>
 </div>
     </main>
 </div>
