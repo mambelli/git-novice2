@@ -10,6 +10,7 @@ title: 'Git Cheatsheets for Quick Reference'
 - Both resources are also available in other languages (e.g. Spanish, French, and more).
 - "[Happy Git and GitHub for the useR](https://happygitwithr.com)" is an accessible, free online book by Jenny Bryan on how to setup and use Git and GitHub with specific references on the integration of Git with RStudio and working with Git in R.
 - [Open Scientific Code using Git and GitHub](https://open-source-for-researchers.github.io/open-source-workshop/) - A collection of explanations and short practical exercises to help researchers learn more about version control and open source software.
+- [Learn Git Branching](https://learngitbranching.js.org/) is an interesting play based Git learning site to understand better many Git concepts like branching, merging and cherry pocking.
 
 ## Glossary
 
