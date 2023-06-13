@@ -83,6 +83,7 @@ identify it:
 ![](fig/github-find-repo-string.png){alt='Where to Find Repository URL on GitHub'}
 
 If you are using SSH (see below), click on the 'SSH' link to change the [protocol](../learners/reference.md#protocol) from HTTPS to SSH.
+If you are using the GitHub CLI and an access token keep HTTPS, or click on 'HTTPS'to return to the HTTPS protocol.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -92,7 +93,7 @@ To commit changes to a repository you need a secure protocol.  We describe two a
 HTTPS using the OAuth protocol and tokens and SSH.  If you have the [GitHub CLI (comman line interpreter)](https://cli.github.com/),
 `gh`, it is very easy to use HTTPS. The GitHub CLI may be available on your host, check with `gh --version`, 
 or [easily installed](https://cli.github.com/manual/installation) on Mac, Windows or Linux (with admin privileges). 
-Then you can create an [access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+Then you can create an [access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 via `gh auth login` and authenticate via HTTPS.  Otherwise, if not using GitHub CLI, use SSH as described below. 
 It requires some additional configuration, but it is a standard security protocol widely used by many
 applications.  The steps below describe SSH at a
@@ -105,11 +106,18 @@ and concepts of SSH and key pairs, and other material supplemental to git relate
 ![](fig/github-change-repo-string.png){alt='Changing the Repository URL on GitHub'}
 
 Copy that URL from the browser, go into the local `planets` repository, and run
-this command:
+one of the following commands. If using GitHub CLI, access tokens, and HTTPS:
+
+```bash
+$ git remote add origin https://github.com/vlad/planets.git
+```
+
+ If using SSH:
 
 ```bash
 $ git remote add origin git@github.com:vlad/planets.git
 ```
+
 
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
@@ -125,6 +133,11 @@ $ git remote -v
 ```
 
 ```output
+# If using HTTPS (GitHub CLI and tokens) you should have:
+origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/vlad/planets.git (push)
+
+# If using SSH you should have
 origin   git@github.com:vlad/planets.git (fetch)
 origin   git@github.com:vlad/planets.git (push)
 ```
